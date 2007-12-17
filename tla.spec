@@ -15,7 +15,6 @@ Source0: 	%{name}-%{version}.tar.bz2
 #gw libneon needs some better provides
 BuildRequires:	libneon-devel
 Requires:	gawk tar gzip patch diffutils
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 Also known as GNU Arch.
