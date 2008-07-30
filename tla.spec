@@ -1,6 +1,6 @@
 %define name	tla
 %define version 1.3.5
-%define release %mkrel 1
+%define release %mkrel 3
 
 Name:		%name
 Version:	%version
