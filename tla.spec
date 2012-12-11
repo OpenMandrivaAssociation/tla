@@ -1,6 +1,7 @@
+%define Werror_cflags	%nil
 %define name	tla
 %define version 1.3.5
-%define release %mkrel 5
+%define release %mkrel 4
 
 Name:		%name
 Version:	%version
@@ -13,9 +14,8 @@ URL:		http://www.gnu.org/software/gnu-arch/
 # Source:	http://releases.gnuarch.org/tla/%{name}-%{version}.tar.gz
 Source0: 	%{name}-%{version}.tar.bz2
 #gw libneon needs some better provides
-BuildRequires:	libneon-devel
+BuildRequires:	pkgconfig(neon)
 Requires:	gawk tar gzip patch diffutils
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 Also known as GNU Arch.
@@ -27,8 +27,6 @@ changeset-oriented project management (arch commits changes to multiple
 files at once), and, of course, file and directory renaming.
 
 %prep
-rm -rf %{buildroot}
-
 %setup -q -n %{name}-%{version}
 # remove id files we don't want to distribute
 find src/docs-tla -name .arch-ids | xargs rm -fr
@@ -36,6 +34,7 @@ find src/docs-tla -name .arch-ids | xargs rm -fr
 rm -rf src/tla/libneon
 
 echo "%{name}-%{version} (%{name}-%{version}-%{release})" > \=RELEASE-ID 
+#sed -i 's/-Wformat//g' src/libneon/configure src/libneon/macros/neon.m4
 
 %build
 mkdir \=build
@@ -50,7 +49,6 @@ cd \=build
 make test
 
 %install
-rm -rf %{buildroot}
 cd \=build
 make install destdir=%{buildroot}
 
@@ -62,11 +60,6 @@ cd ..
 sed 's,^#![[:space:]]*/.*$,#! /usr/bin/gawk -f,' src/tla/\=gpg-check.awk > %{buildroot}/%{_prefix}/bin/tla-gpg-check
 chmod 0755 %{buildroot}/%{_prefix}/bin/tla-gpg-check
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-, root, root)
 %doc src/docs-tla/COPYING* src/docs-tla/ChangeLog 
 %{_bindir}/*
-
