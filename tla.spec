@@ -6,7 +6,7 @@
 Name:		%name
 Version:	%version
 Release:	%release
-Summary:	TLA revision control system
+Summary:	Revision control system
 License:	GPL
 Group:		Development/Other
 URL:		http://www.gnu.org/software/gnu-arch/
