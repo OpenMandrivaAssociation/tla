@@ -1,7 +1,8 @@
+%define __noautoreq '.*/bin/awk|.*/bin/gawk'
 %define Werror_cflags	%nil
 %define name	tla
 %define version 1.3.5
-%define release  5
+%define release  6
 
 Name:		%name
 Version:	%version
