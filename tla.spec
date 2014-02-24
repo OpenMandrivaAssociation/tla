@@ -2,7 +2,7 @@
 %define Werror_cflags	%nil
 %define name	tla
 %define version 1.3.5
-%define release  6
+%define release  7
 
 Name:		%name
 Version:	%version
