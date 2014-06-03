@@ -1,22 +1,23 @@
 %define __noautoreq '.*/bin/awk|.*/bin/gawk'
-%define Werror_cflags	%nil
-%define name	tla
-%define version 1.3.5
-%define release  7
+%define Werror_cflags %nil
 
-Name:		%name
-Version:	%version
-Release:	%release
+Name:		tla
+Version:	1.3.5
+Release:	8
 Summary:	Revision control system
 License:	GPL
 Group:		Development/Other
 URL:		http://www.gnu.org/software/gnu-arch/
 # Source: 	ftp://ftp.gnu.org/gnu/gnu-arch/%{name}-%{version}.tar.gz
 # Source:	http://releases.gnuarch.org/tla/%{name}-%{version}.tar.gz
-Source0: 	%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{version}.tar.bz2
 #gw libneon needs some better provides
 BuildRequires:	pkgconfig(neon)
-Requires:	gawk tar gzip patch diffutils
+Requires:	gawk
+Requires:	bsdtar
+Requires:	gzip
+Requires:	patch
+Requires:	diffutils
 
 %description
 Also known as GNU Arch.
