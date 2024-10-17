@@ -7,7 +7,7 @@ Release:	8
 Summary:	Revision control system
 License:	GPL
 Group:		Development/Other
-URL:		http://www.gnu.org/software/gnu-arch/
+URL:		https://www.gnu.org/software/gnu-arch/
 # Source: 	ftp://ftp.gnu.org/gnu/gnu-arch/%{name}-%{version}.tar.gz
 # Source:	http://releases.gnuarch.org/tla/%{name}-%{version}.tar.gz
 Source0:	%{name}-%{version}.tar.bz2
