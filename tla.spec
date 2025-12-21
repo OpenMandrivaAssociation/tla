@@ -12,6 +12,7 @@ URL:		https://www.gnu.org/software/gnu-arch/
 # Source:	http://releases.gnuarch.org/tla/%{name}-%{version}.tar.gz
 Source0:	%{name}-%{version}.tar.bz2
 #gw libneon needs some better provides
+BuildRequires:	make
 BuildRequires:	pkgconfig(neon)
 Requires:	gawk
 Requires:	bsdtar
